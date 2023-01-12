@@ -5,6 +5,6 @@ The tool automates the attack mentioned by [bxmbn](https://twitter.com/bxmbn) in
 
 # Usage
 
-The tool accepts a txt file that has URLs in the format https://target.com
+The script accepts a txt file that has URLs in the format https://target.com
 
 > python dos_checker.py urls.txt
