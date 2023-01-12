@@ -18,12 +18,9 @@ additional_header = {'X-Amz-Server-Side-Encryption': 'AES256xss'}
 for url in urls:
   count = count + 1
   response = requests.get(url)
-  if ((keyword in response.headers) and (keyword2 in response.headers)
-      and (keyword3 in response.headers)):
+  if ((keyword in response.headers) and (keyword2 in response.headers) and (keyword3 in response.headers)):
     additional_response = requests.get(url + '/?test',headers=additional_header)
     if ((additional_response.status_code == 400) and (keyword4 in additional_response.headers)):
-      print(
-        f"Possible Misconfiguration found. Worth checking the URL manually: {url}"
-      )
+      print(f"Possible Misconfiguration found. Worth checking the URL manually: {url}")
 
 print(f"Completed checking all {count} URLs in the file")
